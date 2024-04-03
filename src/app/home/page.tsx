@@ -1,6 +1,6 @@
 import React from 'react';
 
-const page = () => {
+const HomePage = () => {
   return (
     <div style={{
       minHeight: '100vh',
@@ -12,10 +12,10 @@ const page = () => {
         textAlign: 'center',
         color: 'greenyellow'
       }} >
-        Blog Page
+        Home Page
       </h1>
     </div>
   );
 };
 
-export default page;
+export default HomePage;
