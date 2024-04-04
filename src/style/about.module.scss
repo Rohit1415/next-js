@@ -50,7 +50,7 @@
     .about_bg_wrapper{
         .about_bg_content{
             h1 {
-                font-size: 3.5rem;
+                font-size: 3rem;
             }
         }
     }
@@ -63,7 +63,15 @@
         }
     }  
 }
+
 @media (max-width: 1000px) {
+    .about_bg_wrapper{
+        .about_bg_content{
+            h1 {
+                font-size: 3.5rem;
+            }
+        }
+    }
     .about_content_warapper{
         .about_content {
             width: 90%;
