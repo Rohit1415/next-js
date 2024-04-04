@@ -1,0 +1,143 @@
+// navbar.module.scss
+
+.nav_container {
+  position: fixed;
+  top: 5%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  z-index: 999;
+}
+.navbar {
+  width: 80%;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 1rem;
+  position: relative;
+  z-index: 1000;
+
+  .logo {
+    color: #fff;
+    font-size: 1.5rem;
+  }
+
+  .navLinks {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+
+    li {
+      margin-right: 1rem;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+
+    .bar {
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
+      margin: 3px 0;
+    }
+  }
+
+  .auth {
+    border: 1px solid;
+  }
+
+  .drawer {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #333;
+    width: 100%;
+    padding: 1rem 0;
+    transition: all 0.3s ease-in;
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+
+    &.showDrawer {
+      opacity: 1;
+      visibility: visible;
+      z-index: 1;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin-bottom: 0.5rem;
+      }
+
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .button {
+    list-style-type: none;
+    border-radius: 10px;
+    background-color: #b9d9eb;
+    padding: 5px 20px;
+    color: red;
+    a {
+      color: #002244;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .navLinks {
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      background-color: #333;
+      width: 100%;
+      padding: 1rem 0;
+      transition: all 0.3s ease-in;
+      opacity: 0;
+      visibility: hidden;
+      z-index: -1;
+
+      &.show {
+        opacity: 1;
+        visibility: visible;
+        z-index: 1;
+      }
+
+      li {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    .hamburger {
+      display: flex;
+    }
+
+    .auth {
+      display: none; // Hide auth links for larger screens
+    }
+  }
+}

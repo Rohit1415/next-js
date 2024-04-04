@@ -1,21 +1,13 @@
+import Navbar from '@/component/Navbar';
+import Home from '@/pages/Home';
 import React from 'react';
 
-const page = () => {
+const Page = () => {
   return (
-    <div style={{
-      minHeight: '100vh',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-    }}>
-      <h1 style={{
-        textAlign: 'center',
-        color: 'greenyellow'
-      }} >
-        Blog Page
-      </h1>
+    <div>
+      <Home />
     </div>
   );
 };
 
-export default page;
+export default Page;

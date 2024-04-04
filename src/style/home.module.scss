@@ -1,0 +1,35 @@
+@mixin center_div {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+
+.home_wrapper {
+    @include center_div;
+    min-height: 85vh;
+    width: 100%;
+    background-image: url('../../public/static/home_bg.png');
+    background-position: center 75%;
+    background-size: cover;    
+    
+    .home_overlay {
+        position: absolute;
+        inset: 0;
+        height: 85vh;
+        background-color: rgba(0, 0, 0, 0.4); /* Adjust the overlay color and opacity as needed */
+    }
+    .home_content{
+        @include center_div;
+        flex-direction: column;
+        z-index: 99;
+        color: #fff;
+        h1 {
+            font-size: 5rem;
+        }
+        h2 {
+            text-align: center;
+        }
+    }
+}
+
