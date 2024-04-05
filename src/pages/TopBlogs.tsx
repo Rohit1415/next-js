@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import React, { useEffect } from 'react';
-import style from '../style/topBlog.module.scss';
-import { useAppDispatch, useAppSelector } from '@/store';
-import { getTopBlog } from '@/store/topBlog/api';
-import { TopBlog } from '@/store/topBlog/api/interface';
-import Loader from '@/component/Loader';
+import React, { useEffect } from "react";
+import style from "../style/topBlog.module.scss";
+import { getTopBlog } from "@/store/topBlog/api";
+import { TopBlog } from "@/store/topBlog/api/interface";
+import Loader from "@/component/Loader";
+import { useAppDispatch, useAppSelector } from "@/store";
 
 const TopBlogs = () => {
   const dispatch = useAppDispatch();
@@ -16,24 +16,26 @@ const TopBlogs = () => {
       await dispatch(getTopBlog());
     };
     getTopBlogs();
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className={style.topBlog_wrapper}>
       <div className={style.topBlog}>
-        {
-          isLoading ? <Loader /> : <>
-          {
-          data.map((item:TopBlog) => (
-            <div className={style.content} key={item.id}>
-              <span> {item.id} {"."} </span>
-              <p> {item.title} </p>
-            </div>
-          ))
-        }
+        {isLoading ? (
+          <Loader />
+        ) : (
+          <>
+            {data.map((item: TopBlog) => (
+              <div className={style.content} key={item.id}>
+                <span>
+                  {" "}
+                  {item.id} {"."}{" "}
+                </span>
+                <p> {item.title} </p>
+              </div>
+            ))}
           </>
-        }
-        
+        )}
       </div>
     </div>
   );

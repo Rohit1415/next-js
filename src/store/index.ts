@@ -1,10 +1,12 @@
 import { AnyAction, combineReducers, configureStore } from "@reduxjs/toolkit";
 import { useDispatch, TypedUseSelectorHook, useSelector } from "react-redux";
 
-import topBlogReucer  from './topBlog/topBlogSlice';
+import topBlogReducer from './topBlog/topBlogSlice';
+import imgReducer from './img/imgSlice';
 
 const reducers = {
-    topBlog: topBlogReucer
+    topBlog: topBlogReducer,
+    img: imgReducer,
 };
 
 const rootReducer = combineReducers(reducers);

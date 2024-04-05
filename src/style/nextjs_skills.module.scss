@@ -1,0 +1,24 @@
+// nextjs_skills.module.scss
+
+.img_wrapper {
+  padding: 130px 5px;
+  button {
+    padding: 5px 15px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: darkolivegreen;
+    color: #fff;
+    transition: all 0.3 ease-in-out;
+    &:active {
+      background-color: rgba(85, 107, 47, 0.87);
+    }
+  }
+
+  .image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+}
