@@ -14,7 +14,7 @@ const Navbar: React.FC = () => {
   return (
     <div className={styles.nav_container}>
       <nav className={`${styles.navbar} ${isOpen ? styles.open : ""}`}>
-      <div className={styles.logo}>Blogify</div>
+      <div className={styles.logo} onClick={() => window.location.href = '/'}>Blogify</div>
       <div className={styles.hamburger} onClick={toggleMenu}>
         <div className={styles.bar}></div>
         <div className={styles.bar}></div>
@@ -25,19 +25,13 @@ const Navbar: React.FC = () => {
           <Link href="/">Home</Link>
         </li>
         <li>
-          <Link href="/blog">Blogs</Link>
+          <Link href="/blogs">Blogs</Link>
         </li>
         <li>
           <Link href="/topBlogs">Top Blog</Link>
         </li>
         <li>
           <Link href="/about">About Us</Link>
-        </li>
-        <li className={styles.button}>
-          <Link href="/" >Login</Link>
-        </li>
-        <li  className={styles.button}>
-          <Link href="/">Register</Link>
         </li>
       </ul>
     </nav>

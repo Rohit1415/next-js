@@ -37,11 +37,13 @@ const Home = () => {
                     );
                 })
             }
+            
+        </div>
+        <div className={style.read_more}>
             <div>
                 <button>Read more..</button>
             </div>
         </div>
-        
    </React.Fragment>
   );
 };

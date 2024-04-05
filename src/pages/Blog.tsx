@@ -1,8 +1,35 @@
 import React from 'react';
+import Image from 'next/image';
+import { BlogTypes, blogs } from '@/data/blogs';
+import style from '../style/blog.module.scss';
 
 const Blog = () => {
   return (
-    <div>Blog</div>
+    <div className={style.blog_wrapper}>
+      <div className={style.blog} >
+        {
+          blogs.map((blog:BlogTypes) => {
+            return(
+              <div key={blog.author}>
+              <Image src={blog.img} alt="blog-1" width='100' height='250' />
+              <p className={style.blog_title}>
+                {blog.title}
+              </p>
+              <p className={style.blog_subtitle}>
+                {blog.subtitle}
+              </p>
+              <p className={style.blog_author}>
+              {blog.author} {"•"}
+                <span>
+                  &nbsp;{blog.date_and_time}
+                </span>
+              </p>
+            </div>
+            );
+          })
+        }
+      </div>
+    </div>
   );
 };
 

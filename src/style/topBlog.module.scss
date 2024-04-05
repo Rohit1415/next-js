@@ -1,0 +1,44 @@
+@mixin center_div {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.topBlog_wrapper{
+    width: 100%;
+    @include center_div();
+    padding: 130px 0;
+    .topBlog{
+        width: 80%;
+        @media (max-width: 768px) {
+            width: 90%;
+        }
+        .content{
+            display: flex;
+            margin-bottom: 15px;
+            span {
+                font-size: 25px;
+                font-weight: bold;
+                margin-right: 15px;
+                @media (max-width: 1000px) {
+                    font-size: 18px;
+                }
+                @media (max-width: 768px) {
+                    font-size: 17px;
+                }
+            }
+            p {
+                font-size: 25px;
+                font-weight: bold;
+                @media (max-width: 1000px) {
+                    font-size: 18px;
+                }
+                @media (max-width: 768px) {
+                    font-size: 17px;
+                }
+            }
+            
+        }
+        
+    }
+}
