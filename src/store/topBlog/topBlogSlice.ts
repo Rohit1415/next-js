@@ -12,7 +12,6 @@ const topBlogSlice = createSlice({
             state.isError = false;
         });
         builder.addCase(getTopBlog.fulfilled, (state, action) => {
-            console.log(action.payload);
             state.data = action.payload;
             state.isLoading = false;
             state.isError = false;
